@@ -9,15 +9,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var studentsName: [String] =  ["Pawan","Pooja","Deepak"]
+   @State  var selectedStudent: String  = "Pawan"
     var body: some View {
         NavigationView {
-            Form {
-                      Section {
-                          Text("Hello World")
-                      }
-                  }
+            Picker("select your student",selection: $selectedStudent) {
+                ForEach(0 ..< self.studentsName.count) {
+        Text("\(self.studentsName[$0])")
+                }
+            }
+//                    Form {
+//            //            TextField("Enter your name",text: $name)
+//            //            Text("your name is \(name)")
+////                        ForEach(1..<100) {
+////                            Text("Row \($0)")
+////                        }
+//                    }
+                .navigationBarTitle("Swift UI", displayMode: .automatic)
         }
-        .navigationBarTitle(Text("Hello"))
     }
 }
 
