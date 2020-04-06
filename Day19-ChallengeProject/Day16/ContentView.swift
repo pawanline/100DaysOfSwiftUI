@@ -11,13 +11,21 @@ import SwiftUI
 struct ContentView: View {
  
     @State var inputUnit: String = "Kelvin"
-    @State var outputUnit: String = "Celsius"
+    @State var outputUnit: String = "Fahrenheit"
     @State var inputNumber: String = ""
+    
+    
+    @State var inputTemperatureSelection: Int = 0
+    @State var outputTemperatureSelection: Int = 0
+
     var temperatureConversion : [String] = ["Celsius","Fahrenheit","Kelvin"]
+   
 
     
     var convertedUnit: Double {
         var result: Double = 0
+        let inputUnit = self.temperatureConversion[inputTemperatureSelection]
+        let outputUnit = self.temperatureConversion[outputTemperatureSelection]
         if inputUnit == "Kelvin" {
             let kelvin = Measurement(value: Double(inputNumber) ?? 0.0, unit: UnitTemperature.kelvin)
             if outputUnit == "Celsius" {
@@ -53,20 +61,20 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Enter Bill Amount")) {
+                Section() {
                     TextField("Amount",text: $inputNumber)
                         .keyboardType(.decimalPad)
                 }
                 Section(header: Text("Input Unit")) {
-                    Picker("Input",selection: $inputUnit) {
-                        ForEach (0 ..< self.temperatureConversion.count) {
-                            Text("\(self.temperatureConversion[$1])")
+                    Picker("Input",selection: $inputTemperatureSelection) {
+                        ForEach(0 ..< self.temperatureConversion.count) { text in
+                               Text("\(self.temperatureConversion[text])")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
             Section(header: Text("Output Unit")) {
-                    Picker("Output unit",selection: $outputUnit) {
+                Picker("Output unit",selection: $outputTemperatureSelection) {
                         ForEach( 0 ..< self.temperatureConversion.count) {
                             Text("\(self.temperatureConversion[$0])")
                         }
