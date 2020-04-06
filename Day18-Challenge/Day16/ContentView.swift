@@ -41,8 +41,8 @@ struct ContentView: View {
         NavigationView {
             Form {
                 Section(header: Text("Enter Bill Amount")){
-            TextField("Amount",text: $checkAmount)
-                .keyboardType(.decimalPad)
+                    TextField("Amount",text: $checkAmount)
+                        .keyboardType(.decimalPad)
                 }
                 
                 Section(header: Text("Number of People")) {
@@ -56,23 +56,22 @@ struct ContentView: View {
                             Text("\(self.tipPercentages[$0])%")
                         }
                     }
-                .pickerStyle(SegmentedPickerStyle())
+                    .pickerStyle(SegmentedPickerStyle())
                 }
                 
                 Section(header: Text("Total amount for check")) {
-                                   Text("$\(totalAmountForCheck,specifier: "%.2f")")
-                            }
+                    Text("$\(totalAmountForCheck,specifier: "%.2f")")
+                }
                 Section(header: Text("Amount per person")) {
-                   Text("$\(totalPerPerson, specifier: "%.2f")")
+                    Text("$\(totalPerPerson, specifier: "%.2f")")
                 }
                 
-               
+                
             }
             .navigationBarTitle("We Split", displayMode: .automatic)
         }
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
