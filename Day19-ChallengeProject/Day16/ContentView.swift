@@ -90,6 +90,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Temperature conversion", displayMode: .automatic)
         } .background(Color.red)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 struct ContentView_Previews: PreviewProvider {
