@@ -24,6 +24,7 @@
 		D45562BD242A951B007826AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D45562C0242A951B007826AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D45562C2242A951B007826AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48DE9F5243B85D600C938F7 /* WeSplit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeSplit.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		D45562B3242A9519007826AE /* Day16 */ = {
 			isa = PBXGroup;
 			children = (
+				D48DE9F5243B85D600C938F7 /* WeSplit.entitlements */,
 				D45562B4242A9519007826AE /* AppDelegate.swift */,
 				D45562B6242A9519007826AE /* SceneDelegate.swift */,
 				D45562B8242A9519007826AE /* ContentView.swift */,
@@ -284,9 +286,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Day16/WeSplit.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Day16/Preview Content\"";
-				DEVELOPMENT_TEAM = 8NP76R759R;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Day16/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -295,6 +300,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestAppleDevloper.WeSplit;
 				PRODUCT_NAME = WeSplit;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,9 +312,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Day16/WeSplit.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Day16/Preview Content\"";
-				DEVELOPMENT_TEAM = 8NP76R759R;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Day16/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,6 +326,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bestAppleDevloper.WeSplit;
 				PRODUCT_NAME = WeSplit;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

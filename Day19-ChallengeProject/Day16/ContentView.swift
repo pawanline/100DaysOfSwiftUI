@@ -12,7 +12,7 @@ struct ContentView: View {
  
     @State var inputUnit: String = "Kelvin"
     @State var outputUnit: String = "Fahrenheit"
-    @State var inputNumber: String = ""
+    @State var inputNumber: String = "0"
     
     
     @State var inputTemperatureSelection: Int = 0
@@ -68,17 +68,17 @@ struct ContentView: View {
                 Section(header: Text("Input Unit")) {
                     Picker("Input",selection: $inputTemperatureSelection) {
                         ForEach(0 ..< self.temperatureConversion.count) { text in
-                               Text("\(self.temperatureConversion[text])")
+                            Text("\(self.temperatureConversion[text])")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
-            Section(header: Text("Output Unit")) {
-                Picker("Output unit",selection: $outputTemperatureSelection) {
+                Section(header: Text("Output Unit")) {
+                    Picker("Output unit",selection: $outputTemperatureSelection) {
                         ForEach( 0 ..< self.temperatureConversion.count) {
                             Text("\(self.temperatureConversion[$0])")
                         }
-                    }
+                        }
                     .pickerStyle(SegmentedPickerStyle())
                     
                 }
@@ -86,9 +86,10 @@ struct ContentView: View {
                 Section(header: Text("Result")) {
                     Text("\(convertedUnit,specifier: "%.2f")")
                 }
+                
             }
             .navigationBarTitle("Temperature conversion", displayMode: .automatic)
-        }
+        } .background(Color.red)
     }
 }
 struct ContentView_Previews: PreviewProvider {
