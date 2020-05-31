@@ -11,14 +11,16 @@ import SwiftUI
 struct ContentView: View {
     @State var useRedText: Bool = true
     var body: some View {
-        if self.useRedText {
-            return Text("Hello world")
-                .background(Color.green)
-        } else {
-            return Text("Hello Red View background Color")
-                .background(Color.red)
+        VStack {
+            Text("Step 1")
+                .font(.largeTitle)
+                .blur(radius: 0)
+            Text("Step 2")
+            Text("Step 3")
+            Text("Step 4")
         }
-
+        .font(.title)
+        .blur(radius: 3.0)
     }
 }
 
