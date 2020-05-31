@@ -9,19 +9,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var useRedText: Bool = true
+    let text1 = Text("Text 1")
+    var motto: some View {
+        HStack {
+             Text("fsfsf")
+             Text("fsfsf")
+             Text("fsfsf")
+             Text("fsfsf")
+        }
+       
+    }
+    let text2 = Text("Text 2")
     var body: some View {
         VStack {
-            Text("Step 1")
-                .font(.largeTitle)
-                .blur(radius: 0)
-            Text("Step 2")
-            Text("Step 3")
-            Text("Step 4")
-        }
-        .font(.title)
-        .blur(radius: 3.0)
+           text1
+        text2
+            motto
     }
+}
 }
 
 struct ContentView_Previews: PreviewProvider {
