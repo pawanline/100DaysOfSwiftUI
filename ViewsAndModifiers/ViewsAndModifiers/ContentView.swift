@@ -8,23 +8,25 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    let text1 = Text("Text 1")
-    var motto: some View {
-        HStack {
-             Text("fsfsf")
-             Text("fsfsf")
-             Text("fsfsf")
-             Text("fsfsf")
-        }
-       
+struct CapsuleText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+        .font(.largeTitle)
+        .padding()
+            
+        .foregroundColor(.white)
+        .background(Color.blue)
+            .clipShape(Capsule())
     }
-    let text2 = Text("Text 2")
+}
+struct ContentView: View {
     var body: some View {
         VStack {
-           text1
-        text2
-            motto
+            CapsuleText(text: "First One")
+                .padding()
+            CapsuleText(text: "Second One")
     }
 }
 }
