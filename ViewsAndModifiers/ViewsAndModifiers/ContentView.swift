@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var useRedText: Bool = true
     var body: some View {
-        Text("Hello World")
-        .padding()
-        .background(Color.red)
-        .padding()
-        .background(Color.blue)
-        .padding()
-        .background(Color.yellow)
+        if self.useRedText {
+            return Text("Hello world")
+                .background(Color.green)
+        } else {
+            return Text("Hello Red View background Color")
+                .background(Color.red)
+        }
 
     }
 }
