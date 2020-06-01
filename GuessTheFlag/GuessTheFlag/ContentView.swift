@@ -8,6 +8,25 @@
 
 import SwiftUI
 
+struct FlagImage: ViewModifier {
+    var imageName: String
+    func body(content: Content) -> some View {
+        VStack {
+            content
+                   Image(imageName)
+                       .renderingMode(.original)
+                       .clipShape(Capsule())
+                       .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+                       .shadow(color: .black, radius: 2)
+        }
+    }
+}
+
+extension View {
+    func flagImage(with imageName: String) -> some View {
+        self.modifier(FlagImage(imageName: imageName))
+    }
+}
 struct ContentView: View {
     @State private var showingAlert = false
     @State private var showingScore = false
@@ -20,7 +39,7 @@ struct ContentView: View {
         ZStack {
            LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
-            VStack(spacing: 30) {
+            VStack(spacing: 0) {
                 VStack {
                     Text("Tap the flag of")
                      .foregroundColor(.white)
@@ -33,12 +52,10 @@ struct ContentView: View {
                     Button(action: {
                         self.flagTapped(number)
                     }) {
-                        Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                        .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                        .shadow(color: .black, radius: 2)
-
+                        VStack {
+                            Color.clear
+                            .flagImage(with: self.countries[number])
+                        }
                     }
 
                 }
